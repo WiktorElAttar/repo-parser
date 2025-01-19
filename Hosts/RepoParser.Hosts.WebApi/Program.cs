@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using RepoParser.Hosts.WebApi.Extensions;
 using RepoParser.Infrastructure.Database;
+using RepoParser.Slices.Github;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddApplicationDbContext(builder.Configuration);
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddGitHubSlice();
 
 //------------------------
 var app = builder.Build();

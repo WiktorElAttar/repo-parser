@@ -11,6 +11,7 @@ public static class DatabaseServiceCollectionExtensions
         IConfiguration configuration)
     {
         return services.AddDbContext<ApplicationDbContext>(
-            options => options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
+            options => options
+                .UseSqlServer(configuration.GetConnectionString("SqlServer")));
     }
 }
