@@ -11,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddProblemDetails();
+
 builder.Services.AddApplicationDbContext(builder.Configuration);
 
 builder.Services.AddAuthorization();
@@ -23,6 +25,7 @@ builder.Services.AddGitHubSlice();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+app.UseExceptionHandler();
 
 app.UseSwaggerUI();
 
