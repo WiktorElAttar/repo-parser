@@ -22,7 +22,10 @@ public class GitHubServiceTests
         // Arrange
         var repository = "test/repo";
         var jsContent = "fuNction heLlo() { return 'abc'; }";
-        var zipStream = CreateZipStreamWithContent("test.js", jsContent);
+        var zipStream = CreateZipStreamWithFiles(new Dictionary<string, string>
+        {
+            { "file.js", jsContent },
+        });
             
         var httpResponse = new HttpResponseMessage
         {
@@ -64,7 +67,7 @@ public class GitHubServiceTests
         var tsContent = "fuNction heLlo(prefix: string): string { return prefix +'ABC'; }";
         var txtContent = "123aBC";
 
-        var zipStream = CreateZipStreamWithMultipleFiles(new Dictionary<string, string>
+        var zipStream = CreateZipStreamWithFiles(new Dictionary<string, string>
         {
             { "file.js", jsContent },
             { "file.ts", tsContent },
@@ -127,22 +130,7 @@ public class GitHubServiceTests
             _sut.GetStatistics(repository, CancellationToken.None));
     }
 
-    private static Stream CreateZipStreamWithContent(string fileName, string content)
-    {
-        var memoryStream = new MemoryStream();
-        using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
-        {
-            var entry = archive.CreateEntry(fileName);
-            using var entryStream = entry.Open();
-            using var writer = new StreamWriter(entryStream);
-            writer.Write(content);
-        }
-            
-        memoryStream.Position = 0;
-        return memoryStream;
-    }
-
-    private static Stream CreateZipStreamWithMultipleFiles(Dictionary<string, string> files)
+    private static Stream CreateZipStreamWithFiles(Dictionary<string, string> files)
     {
         var memoryStream = new MemoryStream();
         using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
