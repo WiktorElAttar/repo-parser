@@ -9,9 +9,10 @@ namespace RepoParser.Hosts.WebApi.Controllers;
 [Authorize]
 public class GitHubController(IGitHubSlice gitHubSlice): ControllerBase
 {
-    [HttpGet]
-    public async Task<Dictionary<char, int>> GetStatistics(CancellationToken cancellationToken)
+    [HttpGet("statistics/lodash")]
+    public async Task<Dictionary<char, int>> GetLodashStatistics(CancellationToken cancellationToken)
     {
-        return await gitHubSlice.GetStatistics(cancellationToken);
+        const string lodashRepository = "lodash/lodash";
+        return await gitHubSlice.GetStatistics(lodashRepository, cancellationToken);
     }
 }

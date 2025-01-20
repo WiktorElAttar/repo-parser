@@ -2,5 +2,5 @@
 
 public interface IGitHubSlice
 {
-    Task<Dictionary<char, int>> GetStatistics(CancellationToken cancellationToken);
+    Task<Dictionary<char, int>> GetStatistics(string repository, CancellationToken cancellationToken);
 }
