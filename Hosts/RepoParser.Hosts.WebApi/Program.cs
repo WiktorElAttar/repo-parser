@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Identity;
 using RepoParser.Hosts.WebApi.Extensions;
 using RepoParser.Infrastructure.Database;
@@ -6,6 +7,14 @@ using RepoParser.Slices.Github;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpLogging(options =>
+{
+    options.CombineLogs = true;
+    options.LoggingFields =
+        HttpLoggingFields.Duration |
+        HttpLoggingFields.RequestProperties |
+        HttpLoggingFields.ResponseStatusCode;
+});
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
@@ -23,6 +32,8 @@ builder.Services.AddGitHubSlice();
 
 //------------------------
 var app = builder.Build();
+
+app.UseHttpLogging();
 
 app.UseHttpsRedirection();
 app.UseExceptionHandler();

@@ -12,6 +12,6 @@ internal class CachedGitHubService(
             $"github:{repository}", // Unique key to the cache entry
             async cancel => await gitHubService.GetStatistics(repository, cancel),
             cancellationToken: cancellationToken,
-            options: new() { Expiration = TimeSpan.FromMinutes(1)});
+            options: new() { Expiration = TimeSpan.FromMinutes(5)});
     }
 }
