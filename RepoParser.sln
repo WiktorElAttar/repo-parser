@@ -2,19 +2,19 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{6B8D4733-688A-4B37-AECB-E7CE2911B29E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Hosts.WebApi", "Hosts\RepoParser.Hosts.WebApi\RepoParser.Hosts.WebApi.csproj", "{BE70ABDB-C0BE-4A9C-9FB9-4152C542D53C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Hosts.WebApi", "src\Hosts\RepoParser.Hosts.WebApi\RepoParser.Hosts.WebApi.csproj", "{BE70ABDB-C0BE-4A9C-9FB9-4152C542D53C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CCA027C5-DB32-4490-A814-14B5C0D253B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Infrastructure.Database", "Infrastructure\RepoParser.Infrastructure.Database\RepoParser.Infrastructure.Database.csproj", "{CC20D898-C9C7-43A1-93FF-B74B78F94EF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Infrastructure.Database", "src\Infrastructure\RepoParser.Infrastructure.Database\RepoParser.Infrastructure.Database.csproj", "{CC20D898-C9C7-43A1-93FF-B74B78F94EF9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Slices", "Slices", "{7F105A21-8FDC-4271-98D4-20B1AFDE58DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Slices.GitHub", "Slices\RepoParser.Slices.GitHub\RepoParser.Slices.GitHub.csproj", "{BB1C2FA3-21B0-4411-8F7D-F269B3CF4886}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Slices.GitHub", "src\Slices\RepoParser.Slices.GitHub\RepoParser.Slices.GitHub.csproj", "{BB1C2FA3-21B0-4411-8F7D-F269B3CF4886}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{370329ED-391D-4991-B17F-07AAE4BF1954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Slices.GitHub.Tests", "Tests\RepoParser.Slices.GitHub.Tests\RepoParser.Slices.GitHub.Tests.csproj", "{41C93D0C-F5E5-41AF-BBED-9903C38E5B79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoParser.Slices.GitHub.Tests", "tests\RepoParser.Slices.GitHub.Tests\RepoParser.Slices.GitHub.Tests.csproj", "{41C93D0C-F5E5-41AF-BBED-9903C38E5B79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
