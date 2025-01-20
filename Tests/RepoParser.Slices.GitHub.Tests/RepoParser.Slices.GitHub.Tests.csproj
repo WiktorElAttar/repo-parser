@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Slices\RepoParser.Slices.GitHub\RepoParser.Slices.GitHub.csproj" />
+      <ProjectReference Include="..\..\src\Slices\RepoParser.Slices.GitHub\RepoParser.Slices.GitHub.csproj" />
     </ItemGroup>
 
 </Project>
